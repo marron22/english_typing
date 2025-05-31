@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピング練習アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>タイピング練習</h1>
+
+        <div class="input-area">
+            <h2>単語リストのアップロード・貼り付け</h2>
+            <input type="file" id="fileInput" accept=".tsv">
+            <p>または</p>
+            <textarea id="textInput" rows="5" placeholder="ここにTSV形式で単語と意味を貼り付け（例: apple	果物の一種）"></textarea>
+            <button id="loadButton">リストを読み込む</button>
+        </div>
+
+        <div class="quiz-area" style="display: none;">
+            <h2>問題</h2>
+            <p id="meaningDisplay"></p>
+            <input type="text" id="wordInput" placeholder="英単語を入力">
+            <p id="feedbackDisplay"></p>
+            <button id="nextButton" style="display: none;">次の問題へ</button>
+        </div>
+
+        <div class="controls-area" style="display: none;">
+            <h2>コントロール</h2>
+            <button id="shuffleButton">問題をシャッフル</button>
+            <button id="retryButton">もう一度練習</button>
+        </div>
+
+        <div class="progress-area" style="display: none;">
+            <h2>進捗</h2>
+            <p>正解数: <span id="correctCount">0</span></p>
+            <p>不正解数: <span id="incorrectCount">0</span></p>
+        </div>
+
+        <div class="review-area" style="display: none;">
+            <h2>間違えた単語の復習</h2>
+            <ul id="reviewList"></ul>
+            <button id="startReviewButton" style="display: none;">復習を開始</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
